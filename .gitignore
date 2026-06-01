@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build outputs
+.next/
+out/
+dist/
+contracts/out/
+contracts/cache/
+contracts/broadcast/
+
+# Env files
+.env
+.env.local
+.env.*.local
+contracts/.env
+
+# Misc
+.DS_Store
+*.log
+npm-debug.log*
+.vercel
+.turbo
+
+# Foundry
+contracts/lib/

@@ -1,0 +1,142 @@
+export const FACTORY_ABI = [
+  {
+    type: "function",
+    name: "createAuction",
+    inputs: [
+      { name: "_title",        type: "string"  },
+      { name: "_description",  type: "string"  },
+      { name: "_imageUri",     type: "string"  },
+      { name: "_reservePrice", type: "uint256" },
+      { name: "_bidDeposit",   type: "uint256" },
+      { name: "_deadline",     type: "uint256" },
+      { name: "_revealWindow", type: "uint256" },
+    ],
+    outputs: [
+      { name: "auctionAddr",   type: "address" },
+      { name: "conditionAddr", type: "address" },
+    ],
+    stateMutability: "nonpayable",
+  },
+  {
+    type: "function",
+    name: "getEntries",
+    inputs: [],
+    outputs: [
+      {
+        name: "",
+        type: "tuple[]",
+        components: [
+          { name: "auction",      type: "address" },
+          { name: "bidCondition", type: "address" },
+          { name: "creator",      type: "address" },
+          { name: "createdAt",    type: "uint256" },
+        ],
+      },
+    ],
+    stateMutability: "view",
+  },
+  {
+    type: "function",
+    name: "count",
+    inputs: [],
+    outputs: [{ name: "", type: "uint256" }],
+    stateMutability: "view",
+  },
+] as const;
+
+export const AUCTION_ABI = [
+  {
+    type: "function",
+    name: "info",
+    inputs: [],
+    outputs: [
+      { name: "creator",       type: "address" },
+      { name: "title",         type: "string"  },
+      { name: "description",   type: "string"  },
+      { name: "imageUri",      type: "string"  },
+      { name: "reservePrice",  type: "uint256" },
+      { name: "bidDeposit",    type: "uint256" },
+      { name: "deadline",      type: "uint256" },
+      { name: "revealWindow",  type: "uint256" },
+      { name: "settled",       type: "bool"    },
+      { name: "winner",        type: "address" },
+      { name: "winningAmount", type: "uint256" },
+    ],
+    stateMutability: "view",
+  },
+  {
+    type: "function",
+    name: "phase",
+    inputs: [],
+    outputs: [{ name: "", type: "uint8" }],
+    stateMutability: "view",
+  },
+  {
+    type: "function",
+    name: "bidderCount",
+    inputs: [],
+    outputs: [{ name: "", type: "uint256" }],
+    stateMutability: "view",
+  },
+  {
+    type: "function",
+    name: "getBidders",
+    inputs: [],
+    outputs: [{ name: "", type: "address[]" }],
+    stateMutability: "view",
+  },
+  {
+    type: "function",
+    name: "getBid",
+    inputs: [{ name: "_bidder", type: "address" }],
+    outputs: [
+      {
+        name: "",
+        type: "tuple",
+        components: [
+          { name: "bidder",         type: "address" },
+          { name: "vaultUuid",      type: "uint256" },
+          { name: "revealedAmount", type: "uint256" },
+          { name: "revealed",       type: "bool"    },
+          { name: "vaultSubmitted", type: "bool"    },
+        ],
+      },
+    ],
+    stateMutability: "view",
+  },
+  {
+    type: "function",
+    name: "isRegistered",
+    inputs: [{ name: "_bidder", type: "address" }],
+    outputs: [{ name: "", type: "bool" }],
+    stateMutability: "view",
+  },
+  {
+    type: "function",
+    name: "deadline",
+    inputs: [],
+    outputs: [{ name: "", type: "uint256" }],
+    stateMutability: "view",
+  },
+  {
+    type: "function",
+    name: "registerBid",
+    inputs: [{ name: "_vaultUuid", type: "uint256" }],
+    outputs: [],
+    stateMutability: "payable",
+  },
+  {
+    type: "function",
+    name: "revealBid",
+    inputs: [{ name: "_amount", type: "uint256" }],
+    outputs: [],
+    stateMutability: "payable",
+  },
+  {
+    type: "function",
+    name: "settle",
+    inputs: [],
+    outputs: [],
+    stateMutability: "nonpayable",
+  },
+] as const;
