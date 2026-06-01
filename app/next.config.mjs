@@ -1,7 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   outputFileTracingRoot: process.cwd(),
-  serverExternalPackages: ["pino-pretty", "lokijs", "encoding"],
+  serverExternalPackages: [
+  "pino-pretty",
+  "lokijs", 
+  "encoding",
+  "@piplabs/cdr-sdk",
+  "@piplabs/cdr-crypto",
+  "multiformats",
+  "helia",
+  "@helia/unixfs",
+],
   webpack: (config, { isServer }) => {
     // Handle node: URI scheme used by cdr-crypto WASM loader
     config.externals = config.externals || [];
