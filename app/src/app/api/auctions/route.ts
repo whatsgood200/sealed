@@ -3,6 +3,14 @@ import { createServiceClient } from "@/lib/supabase";
 
 export async function GET() {
   const supabase = createServiceClient();
+  const now = Math.floor(Date.now() / 1000);
+
+  await supabase
+    .from("auctions")
+    .update({ phase: "revealing" })
+    .eq("phase", "bidding")
+    .lt("deadline", now);
+
   const { data, error } = await supabase
     .from("auctions")
     .select("*")
