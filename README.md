@@ -153,7 +153,7 @@ Open http://localhost:3000
 - On-chain verifiable: every step has a transaction hash
 
 **CDR SDK used:** `@piplabs/cdr-sdk` v0.2.1
-**Network:** Story Aeneid Testnet (chainId 1513)
+**Network:** Story Aeneid Testnet (chainId 1315)
 **Live demo:** https://sealed.vercel.app (after deploy)
 
 ---
