@@ -137,34 +137,6 @@ Open http://localhost:3000
 
 ---
 
-## Environment Variables
-
-```env
-# Story
-NEXT_PUBLIC_RPC_URL=https://aeneid.storyrpc.io
-NEXT_PUBLIC_STORY_API_URL=http://172.192.41.96:1317
-NEXT_PUBLIC_CHAIN_ID=1513
-
-# Contracts
-NEXT_PUBLIC_FACTORY_ADDRESS=0x...    # from deploy step
-
-# CDR
-NEXT_PUBLIC_OWNER_WRITE_CONDITION=0x4C9bFC96d7092b590D497A191826C3dA2277c34B
-
-# Supabase
-NEXT_PUBLIC_SUPABASE_URL=https://xxx.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=...
-SUPABASE_SERVICE_ROLE_KEY=...
-
-# WalletConnect
-NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID=...
-
-# Cron auth
-CRON_SECRET=...
-```
-
----
-
 ## Submission
 
 **Track 1 — Technical Implementation:**
